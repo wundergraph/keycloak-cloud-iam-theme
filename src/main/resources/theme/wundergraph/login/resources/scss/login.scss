@@ -16,7 +16,7 @@ body, .login-pf body, .login-pf {
 }
 
 #kc-header, .login-pf-page-header {
-  @apply m-0;
+  @apply mb-6;
 }
 
 #kc-header-wrapper {
@@ -46,7 +46,7 @@ form {
 }
 
 .form-group input {
-  @apply appearance-none block w-full border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+  @apply appearance-none block w-full border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm;
 }
 
 .login-pf-header h1 {
@@ -58,11 +58,11 @@ form {
 }
 
 #kc-login {
-  @apply w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-50;
+  @apply w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50;
 }
 
 #rememberMe {
-  @apply h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded;
+  @apply h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded;
 }
 
 #kc-form-options label {
@@ -74,7 +74,7 @@ form {
 }
 
 .login-pf-settings div span a {
-  @apply font-medium text-sm text-indigo-600 hover:text-indigo-500 no-underline;
+  @apply font-medium text-sm text-purple-600 hover:text-purple-500 no-underline;
 }
 
 .login-pf-settings div span a:hover {
@@ -82,7 +82,7 @@ form {
 }
 
 #kc-registration a {
-  @apply font-medium text-indigo-600 hover:text-indigo-500;
+  @apply font-medium text-purple-600 hover:text-purple-500;
 }
 
 #kc-registration a:hover {
@@ -121,7 +121,7 @@ form {
 }
 
 .form-group-cgu input {
-  @apply h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded mb-0.5;
+  @apply h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded mb-0.5;
 }
 
 .form-group-cgu label {
@@ -129,7 +129,7 @@ form {
 }
 
 .form-group-cgu label a {
-  @apply font-medium text-indigo-600 hover:text-indigo-500;
+  @apply font-medium text-purple-600 hover:text-purple-500;
 }
 
 .pf-c-dropdown__menu {
@@ -141,11 +141,30 @@ form {
 }
 
 #kc-current-locale-link {
-  @apply font-medium text-indigo-600 hover:text-indigo-500;
+  @apply font-medium text-purple-600 hover:text-purple-500;
 }
 
 #kc-current-locale-link:hover + .pf-c-dropdown__menu {
   @apply block;
+}
+
+#kc-social-providers {
+    @apply text-center;
+    h4 {
+        @apply py-8;
+    }
+    ul a {
+        @apply inline-flex justify-center py-2 px-4 border border-transparent shadow-sm rounded-md text-white bg-gray-600 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500
+    }
+    ul.kc-social-links {
+        @apply space-y-2;
+    }
+    .kc-social-provider-name {
+        @apply pl-3 leading-4 flex items-center;
+    }
+    .kc-social-provider-logo {
+        @apply text-xl;
+    }
 }
 
 #kc-terms-text {
@@ -154,17 +173,17 @@ form {
 }
 
 #kc-form-buttons input {
-  margin-top: 20px;
+   @apply inline-flex justify-center py-2 px-4 border border-transparent shadow-sm rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500
 }
 
 .pf-c-button {
-  @apply w-full flex py-2 px-4 border border-transparent rounded-md justify-center text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-50;
+  @apply w-full flex py-2 px-4 border border-transparent rounded-md justify-center text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50;
 }
 
 .pf-c-button.pf-m-primary {
-  @apply shadow-sm text-white bg-indigo-600 hover:bg-indigo-700
+  @apply shadow-sm text-white bg-purple-600 hover:bg-purple-700
 }
 
 .pf-c-button.btn-default {
-  @apply shadow-none bg-none bg-white text-indigo-600 hover:text-indigo-500;
+  @apply shadow-none bg-none bg-white text-purple-600 hover:text-purple-500;
 }
