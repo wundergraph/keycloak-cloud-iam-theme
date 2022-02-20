@@ -34,3 +34,4 @@ change the type to put the themes you want :
 
 - https://www.baeldung.com/spring-keycloak-custom-themes
 - https://github.com/InseeFrLab/keycloakify
+- https://github.com/wundergraph/keywind
