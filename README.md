@@ -8,8 +8,8 @@
 
 ## Theme Development Workflow
 
-1. Run `./start` to start keycloak database.
-2. Run `./build-and-restart-keycloak.sh` to build and restart keycloak. All realms settings will survive.
+1. Run `./start` to start keycloak with a postgres database.
+2. Run `./build-and-restart-keycloak.sh` to rebuild and restart keycloak. All realms settings will survive.
 3. Connect to Keycloak console [http://localhost:8080](http://localhost:8080), click on `Themes` tab, and select `wundergraph` in front of `Login Theme`.
 4. **Optional:** Use `npm run watch` to run on changes.
 
