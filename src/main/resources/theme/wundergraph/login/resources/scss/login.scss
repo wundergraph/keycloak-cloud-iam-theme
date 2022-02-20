@@ -67,6 +67,9 @@ form {
 
 #kc-form-options label {
   @apply block text-sm text-gray-900;
+  a {
+    @apply text-purple-600 hover:text-purple-700;
+  }
 }
 
 .login-pf-settings {
@@ -167,6 +170,9 @@ form {
 #kc-terms-text {
   margin-bottom: 40px;
   text-align: justify;
+  a {
+    @apply text-purple-600 hover:text-purple-700;
+  }
 }
 
 #kc-form-buttons {
