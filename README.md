@@ -1,32 +1,19 @@
-# Cloud-IAM Example Keycloak theme
+# WunderGraph Keycloak theme
 
 ## Build the theme extension
 
 ```
-mvn package
+./build.sh
 ```
 
 ## Theme Development Workflow
 
-Build this theme `.jar` file with:
+1. Run `./start` to start keycloak database.
+2. Run `./build-and-restart-keycloak.sh` to build and restart keycloak. All realms settings will survive.
+3. Connect to Keycloak console [http://localhost:8080](http://localhost:8080), click on `Themes` tab, and select `wundergraph` in front of `Login Theme`.
+4. **Optional:** Use `npm run watch` to run on changes.
 
-```bash
-# build the theme and wrap it in a .jar file
-mvn package
-
-# move theme to /tmp/theme/ folder for futur use by keycloak
-mkdir -p /tmp/theme && cp -v target/*.jar /tmp/theme/
-```
-
-Then start Keycloak IAM (in single-node mode) locally through docker and use the host `/tmp/theme` folder as Keycloak deployment directory.
-
-```bash
-docker run -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -v /tmp/theme:/opt/jboss/keycloak/standalone/deployments/ quay.io/keycloak/keycloak:15.0.0
-```
-
-Connect to Keycloak console [http://localhost:8080](http://localhost:8080), click on `Themes` tab, and select `cloud-iam` in front of `Login Theme`.
-
-## More :
+## More
 
 If you want to activate the login, email or other theme, open :
 ```bash

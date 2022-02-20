@@ -1,6 +1,6 @@
 module.exports = {
-    purge: [
-        "./src/**/*.scss"
+    content: [
+        "./src/**/*.{html,js,ts,jsx,tsx,ftl,scss,properties}",
     ],
     theme: {},
     variants: {},

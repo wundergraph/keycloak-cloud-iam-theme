@@ -57,7 +57,7 @@
 
                   <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
                       <input type="hidden" id="id-hidden-input" name="credentialId" <#if auth.selectedCredential?has_content>value="${auth.selectedCredential}"</#if>/>
-                      <input tabindex="4" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                      <input tabindex="4" class="w-full box-border relative inline-flex items-center justify-center text-center no-underline leading-none whitespace-nowrap font-semibold rounded flex-shrink-0 transition select-none overflow-hidden text-sm sm:text-base py-2 px-4 cursor-pointer border border-purple-600 bg-purple-600 text-white focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
                   </div>
             </form>
         </#if>
@@ -66,9 +66,9 @@
             <div id="kc-social-providers" class="${properties.kcFormSocialAccountSectionClass!}">
                 <h4>${msg("identity-provider-login-label")}</h4>
 
-                <ul class="${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountListGridClass!}</#if>">
+                <ul class="space-y-2">
                     <#list social.providers as p>
-                        <a id="social-${p.alias}" class="${properties.kcFormSocialAccountListButtonClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountGridItem!}</#if>"
+                        <a id="social-${p.alias}" class="w-full box-border relative hover:no-underline inline-flex items-center justify-center text-center no-underline leading-none whitespace-nowrap font-semibold rounded flex-shrink-0 transition select-none overflow-hidden text-sm sm:text-base py-2 px-4 cursor-pointer border border-purple-600 bg-gray-600 hover:bg-gray-800 text-white focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 <#if social.providers?size gt 3>${properties.kcFormSocialAccountGridItem!}</#if>"
                                 type="button" href="${p.loginUrl}">
                             <#if p.iconClasses?has_content>
                                 <i class="${properties.kcCommonLogoIdP!} ${p.iconClasses!}" aria-hidden="true"></i>

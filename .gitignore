@@ -5,3 +5,4 @@ target
 *.log
 node_modules
 src/main/resources/theme/cloud-iam-redesign/login/resources/dist
+dist

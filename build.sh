@@ -1,4 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+set -euo pipefail
+
+rm -rf target
 
 # install dependencies
 npm install

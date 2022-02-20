@@ -1,7 +1,7 @@
 module.exports = {
     plugins: {
-        "postcss-fontpath": { checkFiles: true, ie8Fix: true },
-        tailwindcss: "tailwind.config.js",
+        "postcss-fontpath": {checkFiles: true, ie8Fix: true},
+        tailwindcss: {},
         autoprefixer: {},
     },
 };

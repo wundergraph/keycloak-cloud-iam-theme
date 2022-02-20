@@ -7,9 +7,9 @@
         ${kcSanitize(msg("termsText"))?no_esc}
     </div>
     <form class="form-actions" action="${url.loginAction}" method="POST">
-        <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-            <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" name="accept" id="kc-accept" type="submit" value="${msg("doAccept")}"/>
-            <input class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" name="cancel" id="kc-decline" type="submit" value="${msg("doDecline")}"/>
+        <div id="kc-form-buttons" class="space-y-4">
+            <input class="w-full box-border relative no-underline inline-flex items-center justify-center text-center no-underline leading-none whitespace-nowrap font-semibold rounded flex-shrink-0 transition select-none overflow-hidden text-sm sm:text-base py-2 px-4 cursor-pointer border border-purple-600 bg-purple-600 text-white focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" name="accept" id="kc-accept" type="submit" value="${msg("doAccept")}"/>
+            <input class="w-full box-border relative no-underline inline-flex items-center justify-center text-center no-underline leading-none whitespace-nowrap font-semibold rounded flex-shrink-0 transition select-none overflow-hidden text-sm sm:text-base py-2 px-4 cursor-pointer border hover:bg-gray-800 hover:text-white text-black focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" name="cancel" id="kc-decline" type="submit" value="${msg("doDecline")}"/>
         </div>
     </form>
     <div class="clearfix"></div>
