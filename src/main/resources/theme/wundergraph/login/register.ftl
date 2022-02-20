@@ -132,7 +132,7 @@
                 </div>
 
                 <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <input class="w-full box-border relative no-underline inline-flex items-center justify-center text-center no-underline leading-none whitespace-nowrap font-semibold rounded flex-shrink-0 transition select-none overflow-hidden text-base py-2 px-4 cursor-pointer border border-purple-600 bg-purple-600 hover:bg-purple-700 text-white focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" type="submit" value="${msg("doRegister")}"/>
+                    <input class="w-full box-border relative no-underline inline-flex items-center justify-center text-center no-underline whitespace-nowrap font-semibold rounded flex-shrink-0 transition select-none overflow-hidden text-base py-2 px-4 cursor-pointer border border-purple-600 bg-purple-600 hover:bg-purple-700 text-white focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" type="submit" value="${msg("doRegister")}"/>
                 </div>
             </div>
         </form>

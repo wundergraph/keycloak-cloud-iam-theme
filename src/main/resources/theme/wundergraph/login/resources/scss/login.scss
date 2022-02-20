@@ -169,8 +169,10 @@ form {
   text-align: justify;
 }
 
-#kc-form-buttons > div {
-  @apply space-y-4
+#kc-form-buttons {
+  & > div {
+    @apply space-y-4;
+  }
 }
 
 .pf-c-button {
