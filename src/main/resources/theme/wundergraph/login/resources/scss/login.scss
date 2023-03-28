@@ -4,25 +4,21 @@
 
 
 body, .login-pf body, .login-pf {
-  @apply bg-gray-50;
-}
-
-.login-pf {
-  background: rgba(249, 250, 251, var(--tw-bg-opacity)) !important;
+  @apply bg-gray-950 text-gray-500;
 }
 
 .login-pf-page {
-  @apply min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8;
+  @apply min-h-screen bg-gray-950 flex flex-col justify-center py-0 md:py-12 md:px-6 lg:px-8;
 }
 
 #kc-header, .login-pf-page-header {
-  @apply mb-6;
+  @apply mb-4;
 }
 
 #kc-header-wrapper {
-  background-image: url(../img/630x630-blue.png);
-  background-size: 8rem;
-  @apply h-32 w-full bg-no-repeat bg-center text-transparent;
+  background-image: url(../img/630x630-white.png);
+  background-size: 6rem;
+  @apply h-24 w-full bg-no-repeat bg-center text-transparent;
 }
 
 #kc-locale-wrapper {
@@ -34,7 +30,7 @@ div.kc-logo-text span {
 }
 
 .card-pf {
-  @apply mt-4 sm:mx-auto sm:w-full sm:max-w-md bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10;
+  @apply mx-auto w-full md:max-w-md bg-gray-950 md:bg-gray-900 py-8 px-4 shadow md:rounded-lg md:px-10;
 }
 
 form {
@@ -42,11 +38,11 @@ form {
 }
 
 .form-group label {
-  @apply block text-sm font-medium text-gray-700 cursor-default pb-1;
+  @apply block text-sm font-medium text-gray-400 cursor-default pb-1;
 }
 
 .form-group input[type="password"], .form-group input[type="text"] {
-  @apply appearance-none block w-full border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm;
+  @apply block w-full flex-1 rounded-md text-sm disabled:cursor-not-allowed border border-gray-600 bg-gray-800 text-gray-100 placeholder-gray-400 focus:border-sky-500 hover:border-gray-500 hover:focus:border-sky-500 disabled:hover:border-gray-600
 }
 
 .form-group input[type="checkbox"] {
@@ -54,7 +50,7 @@ form {
 }
 
 .login-pf-header h1 {
-  @apply mt-2 text-center text-3xl font-extrabold text-gray-900 mb-4;
+  @apply text-center text-3xl font-bold text-white my-3;
 }
 
 #id-hidden-input {
@@ -67,10 +63,10 @@ form {
 
 #kc-form-options {
   label {
-    @apply block text-sm text-gray-900;
+    @apply block text-sm text-gray-500;
   }
   a {
-    @apply text-purple-600 hover:text-purple-700;
+    @apply text-sky-600 hover:text-sky-700 no-underline text-sm;
   }
 }
 
@@ -79,7 +75,7 @@ form {
 }
 
 .login-pf-settings div span a {
-  @apply font-medium text-sm text-purple-600 hover:text-purple-500 no-underline;
+  @apply font-medium text-sky-600 hover:text-sky-700 no-underline text-sm;
 }
 
 .login-pf-settings div span a:hover {
@@ -87,7 +83,7 @@ form {
 }
 
 #kc-registration a {
-  @apply font-medium text-purple-600 hover:text-purple-500;
+  @apply font-medium text-sky-600 hover:text-sky-700 no-underline text-base;
 }
 
 #kc-registration a:hover {
@@ -104,6 +100,7 @@ form {
 
 .checkbox, .radio {
   position: inherit;
+  align-items: center;
   display: flex;
   margin-top: 0;
   margin-bottom: 0;
@@ -134,7 +131,11 @@ form {
 }
 
 .form-group-cgu label a {
-  @apply font-medium text-purple-600 hover:text-purple-500;
+  @apply font-medium text-purple-600 hover:text-purple-500 no-underline text-base;
+}
+
+#input-error {
+  @apply text-xs text-red-700
 }
 
 .pf-c-dropdown__menu {
@@ -155,17 +156,17 @@ form {
 
 #kc-social-providers {
     @apply text-center;
-    h4 {
-        @apply py-8;
+    ul {
+      @apply grid grid-cols-2 gap-x-2
     }
-    ul a {
-        @apply inline-flex justify-center py-2 px-4 border border-transparent shadow-sm rounded-md text-white bg-gray-600 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500
+    a {
+      @apply text-sm font-semibold flex items-center justify-center rounded-md border border-transparent transition-all bg-gray-800 py-2 px-4 text-white no-underline shadow-sm focus:outline-none focus:ring-0 hover:bg-gray-700 active:scale-95
     }
     .kc-social-provider-name {
-        @apply pl-3 leading-4 flex items-center;
+      @apply pl-3 leading-4 flex items-center;
     }
     .kc-social-provider-logo {
-        @apply text-xl;
+      @apply text-xl;
     }
 }
 
@@ -173,7 +174,7 @@ form {
   margin-bottom: 40px;
   text-align: justify;
   a {
-    @apply text-purple-600 hover:text-purple-700;
+    @apply text-purple-600 hover:text-purple-700 no-underline text-base;
   }
 }
 
