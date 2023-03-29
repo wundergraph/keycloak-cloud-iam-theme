@@ -3,7 +3,24 @@
     <#if section = "header">
         ${msg("registerTitle")}
     <#elseif section = "form">
-        <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
+        <#if realm.password && social.providers??>
+            <div id="kc-social-providers" class="${properties.kcFormSocialAccountSectionClass!}">
+                <ul>
+                    <#list social.providers as p>
+                        <a id="social-${p.alias}" type="button" href="${p.loginUrl}">
+                            <#if p.iconClasses?has_content>
+                                <i class="${properties.kcCommonLogoIdP!} ${p.iconClasses!}" aria-hidden="true"></i>
+                                <span class="${properties.kcFormSocialAccountNameClass!} kc-social-icon-text">${p.displayName!}</span>
+                            <#else>
+                                <span class="${properties.kcFormSocialAccountNameClass!}">${p.displayName!}</span>
+                            </#if>
+                        </a>
+                    </#list>
+                </ul>
+            </div>
+        </#if>
+        <hr class="border-gray-700 my-8"/>
+        <form id="kc-register-form" class="flex flex-col md:grid grid-cols-2 gap-2" action="${url.registrationAction}" method="post">
             <div class="${properties.kcFormGroupClass!}">
                 <div class="${properties.kcLabelWrapperClass!}">
                     <label for="firstName" class="${properties.kcLabelClass!}">${msg("firstName")}</label>
@@ -14,7 +31,8 @@
                            aria-invalid="<#if messagesPerField.existsError('firstName')>true</#if>"
                     />
                     <#if messagesPerField.existsError('firstName')>
-                        <span id="input-error-firstname" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                        <span id="input-error-firstname" class="${properties.kcInputErrorMessageClass!}"
+                              aria-live="polite">
                             ${kcSanitize(messagesPerField.get('firstName'))?no_esc}
                         </span>
                     </#if>
@@ -32,7 +50,8 @@
                     />
 
                     <#if messagesPerField.existsError('lastName')>
-                        <span id="input-error-lastname" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                        <span id="input-error-lastname" class="${properties.kcInputErrorMessageClass!}"
+                              aria-live="polite">
                             ${kcSanitize(messagesPerField.get('lastName'))?no_esc}
                         </span>
                     </#if>
@@ -69,7 +88,8 @@
                         />
 
                         <#if messagesPerField.existsError('username')>
-                            <span id="input-error-username" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                            <span id="input-error-username" class="${properties.kcInputErrorMessageClass!}"
+                                  aria-live="polite">
                                 ${kcSanitize(messagesPerField.get('username'))?no_esc}
                             </span>
                         </#if>
@@ -89,7 +109,8 @@
                         />
 
                         <#if messagesPerField.existsError('password')>
-                            <span id="input-error-password" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                            <span id="input-error-password" class="${properties.kcInputErrorMessageClass!}"
+                                  aria-live="polite">
                                 ${kcSanitize(messagesPerField.get('password'))?no_esc}
                             </span>
                         </#if>
@@ -108,7 +129,8 @@
                         />
 
                         <#if messagesPerField.existsError('password-confirm')>
-                            <span id="input-error-password-confirm" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                            <span id="input-error-password-confirm" class="${properties.kcInputErrorMessageClass!}"
+                                  aria-live="polite">
                                 ${kcSanitize(messagesPerField.get('password-confirm'))?no_esc}
                             </span>
                         </#if>
@@ -124,15 +146,16 @@
                 </div>
             </#if>
 
-            <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
+            <div class="col-span-full space-y-4">
+                <div id="kc-form-options">
                     <div class="${properties.kcFormOptionsWrapperClass!}">
                         <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a></span>
                     </div>
                 </div>
 
-                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <input class="w-full box-border relative no-underline inline-flex items-center justify-center text-center no-underline whitespace-nowrap font-semibold rounded flex-shrink-0 transition select-none overflow-hidden text-base py-2 px-4 cursor-pointer border border-purple-600 bg-purple-600 hover:bg-purple-700 text-white focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" type="submit" value="${msg("doRegister")}"/>
+                <div id="kc-form-buttons">
+                    <input class="flex h-10 w-full text-base justify-center items-center space-x-3 rounded-md border font-semibold focus:outline-none focus:ring-2 focus:ring-sky-900 transition disabled:cursor-not-allowed text-white bg-sky-600 border-sky-500 hover:bg-sky-500 hover:border-sky-400"
+                           type="submit" value="${msg("doRegister")}"/>
                 </div>
             </div>
         </form>

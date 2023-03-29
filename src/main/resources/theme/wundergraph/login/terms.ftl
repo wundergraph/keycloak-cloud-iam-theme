@@ -3,15 +3,17 @@
     <#if section = "header">
         ${msg("termsTitle")}
     <#elseif section = "form">
-    <div id="kc-terms-text">
-        ${kcSanitize(msg("termsText"))?no_esc}
-    </div>
-    <form class="form-actions" action="${url.loginAction}" method="POST">
-        <div id="kc-form-buttons" class="space-y-4">
-            <input class="w-full box-border relative no-underline inline-flex items-center justify-center text-center no-underline leading-none whitespace-nowrap font-semibold rounded flex-shrink-0 transition select-none overflow-hidden text-sm sm:text-base py-2 px-4 cursor-pointer border border-purple-600 bg-purple-600 text-white focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" name="accept" id="kc-accept" type="submit" value="${msg("doAccept")}"/>
-            <input class="w-full box-border relative no-underline inline-flex items-center justify-center text-center no-underline leading-none whitespace-nowrap font-semibold rounded flex-shrink-0 transition select-none overflow-hidden text-sm sm:text-base py-2 px-4 cursor-pointer border hover:bg-gray-800 hover:text-white text-black focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" name="cancel" id="kc-decline" type="submit" value="${msg("doDecline")}"/>
+        <div id="kc-terms-text">
+            ${kcSanitize(msg("termsText"))?no_esc}
         </div>
-    </form>
-    <div class="clearfix"></div>
+        <form class="form-actions" action="${url.loginAction}" method="POST">
+            <div id="kc-form-buttons" class="space-y-4">
+                <input class="flex h-10 w-full text-base justify-center items-center space-x-3 rounded-md border font-semibold focus:outline-none focus:ring-2 focus:ring-sky-900 transition disabled:cursor-not-allowed text-white bg-sky-600 border-sky-500 hover:bg-sky-500 hover:border-sky-400"
+                       name="accept" id="kc-accept" type="submit" value="${msg("doAccept")}"/>
+                <input class="flex h-10 w-full text-base justify-center items-center space-x-3 rounded-md border font-semibold focus:outline-none focus:ring-2 focus:ring-red-900 transition disabled:cursor-not-allowed text-white bg-red-500 border-red-500 hover:bg-red-400 hover:border-red-400"
+                       name="cancel" id="kc-decline" type="submit" value="${msg("doDecline")}"/>
+            </div>
+        </form>
+        <div class="clearfix"></div>
     </#if>
 </@layoutCloudIAM.registrationCloudIamLayout>

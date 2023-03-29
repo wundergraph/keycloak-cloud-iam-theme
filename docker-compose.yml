@@ -14,9 +14,9 @@ services:
       POSTGRES_USER: keycloak
       POSTGRES_PASSWORD: password
   keycloak:
-    image: quay.io/keycloak/keycloak:16.1.0
+    image: quay.io/keycloak/keycloak:19.0.3
     volumes:
-      - /tmp/theme:/opt/jboss/keycloak/standalone/deployments/
+      - /tmp/theme/:/opt/keycloak/providers
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: postgres
@@ -24,11 +24,12 @@ services:
       DB_USER: keycloak
       DB_SCHEMA: public
       DB_PASSWORD: password
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: admin
-      # Uncomment the line below if you want to specify JDBC parameters. The parameter below is just an example, and it shouldn't be used in production without knowledge. It is highly recommended that you read the PostgreSQL JDBC driver documentation in order to use it.
-      #JDBC_PARAMS: "ssl=true"
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    command: start-dev
     ports:
       - 8080:8080
     depends_on:
       - postgres
+
+# docker run --rm -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin -v /tmp/theme/:/opt/keycloak/providers quay.io/keycloak/keycloak:19.0.3 start-dev

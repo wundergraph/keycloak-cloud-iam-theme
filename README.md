@@ -13,13 +13,24 @@
 3. Connect to Keycloak console [http://localhost:8080](http://localhost:8080), click on `Themes` tab, and select `wundergraph` in front of `Login Theme`.
 4. **Optional:** Use `npm run watch` to run on changes.
 
+## Without Docker Compose
+
+Run `./build.sh` and then
+
+```bash
+docker run --rm -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin -v /tmp/theme/:/opt/keycloak/providers quay.io/keycloak/keycloak:19.0.3 start-dev
+```
+
 ## More
 
 If you want to activate the login, email or other theme, open :
+
 ```bash
 src/main/resources/META-INF/keycloak-themes.json
 ```
+
 change the type to put the themes you want :
+
 ```bash
 {
     "themes": [{
@@ -28,7 +39,6 @@ change the type to put the themes you want :
     }]
 }
 ```
-
 
 ## Resources
 
