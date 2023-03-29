@@ -3,7 +3,24 @@
     <#if section = "header">
         ${msg("registerTitle")}
     <#elseif section = "form">
-        <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
+        <#if realm.password && social.providers??>
+            <div id="kc-social-providers" class="${properties.kcFormSocialAccountSectionClass!}">
+                <ul>
+                    <#list social.providers as p>
+                        <a id="social-${p.alias}" type="button" href="${p.loginUrl}">
+                            <#if p.iconClasses?has_content>
+                                <i class="${properties.kcCommonLogoIdP!} ${p.iconClasses!}" aria-hidden="true"></i>
+                                <span class="${properties.kcFormSocialAccountNameClass!} kc-social-icon-text">${p.displayName!}</span>
+                            <#else>
+                                <span class="${properties.kcFormSocialAccountNameClass!}">${p.displayName!}</span>
+                            </#if>
+                        </a>
+                    </#list>
+                </ul>
+            </div>
+        </#if>
+        <hr class="border-gray-700 my-8"/>
+        <form id="kc-register-form" class="flex flex-col md:grid grid-cols-2 gap-2" action="${url.registrationAction}" method="post">
             <div class="${properties.kcFormGroupClass!}">
                 <div class="${properties.kcLabelWrapperClass!}">
                     <label for="firstName" class="${properties.kcLabelClass!}">${msg("firstName")}</label>
@@ -129,14 +146,14 @@
                 </div>
             </#if>
 
-            <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
+            <div class="col-span-full space-y-4">
+                <div id="kc-form-options">
                     <div class="${properties.kcFormOptionsWrapperClass!}">
                         <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a></span>
                     </div>
                 </div>
 
-                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
+                <div id="kc-form-buttons">
                     <input class="flex h-10 w-full text-base justify-center items-center space-x-3 rounded-md border font-semibold focus:outline-none focus:ring-2 focus:ring-sky-900 transition disabled:cursor-not-allowed text-white bg-sky-600 border-sky-500 hover:bg-sky-500 hover:border-sky-400"
                            type="submit" value="${msg("doRegister")}"/>
                 </div>
